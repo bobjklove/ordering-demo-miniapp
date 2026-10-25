@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <title>手机点单 · 30 秒</title>
+  <!--
+    One-page bilingual feature sheet.
+    Regenerate the PNG and JPG with: node docs/feature-sheet/render.mjs
+    Needs Chrome (or Chromium) and ffmpeg. Chinese text uses Noto Sans CJK SC
+    and Noto Serif CJK SC when those fonts are installed.
+    The only link on the sheet is the public demo.
+  -->
+  <style>
+    :root {
+      --ink: #2a2118;
+      --paper: #f3e7d6;
+      --card: #fffaf3;
+      --c: #c4522a;
+      --c-dark: #8c3418;
+      --accent: #e3b15a;
+      --leaf: #2f6a4a;
+      --muted: #7a6758;
+      --line: rgba(42, 33, 24, 0.14);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--paper); }
+    body {
+      font-family: "Noto Sans CJK SC", "Noto Sans SC", "Noto Sans", sans-serif;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+    .sheet {
+      width: 1080px;
+      background:
+        radial-gradient(820px 360px at 92% -4%, rgba(227, 177, 90, 0.45), transparent 62%),
+        radial-gradient(640px 420px at -8% 8%, rgba(196, 82, 42, 0.13), transparent 58%),
+        var(--paper);
+    }
+    header {
+      padding: 48px 52px 8px;
+    }
+    .kicker {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 28px;
+      letter-spacing: 0.12em;
+      color: var(--c-dark);
+      font-weight: 700;
+    }
+    .kicker i {
+      width: 42px;
+      height: 3px;
+      background: var(--c);
+      display: block;
+    }
+    h1 {
+      margin: 16px 0 0;
+      font-family: "Noto Serif CJK SC", "Noto Serif", serif;
+      font-weight: 700;
+      font-size: 78px;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+    h1 span { color: var(--c); }
+    .en-lead {
+      margin: 14px 0 0;
+      font-size: 34px;
+      line-height: 1.35;
+      color: var(--ink);
+      max-width: 960px;
+    }
+    .who {
+      margin: 18px 0 0;
+      font-size: 30px;
+      color: var(--muted);
+    }
+    .who b { color: var(--ink); font-weight: 700; }
+    .link {
+      margin: 22px 0 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--ink);
+      color: #fffaf3;
+      border-radius: 999px;
+      padding: 14px 22px 14px 14px;
+      font-size: 30px;
+      line-height: 1;
+    }
+    .link b {
+      background: var(--c);
+      color: #fffaf3;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 26px;
+      font-weight: 700;
+    }
+    .link em { font-style: normal; color: var(--accent); }
+    .story {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 22px;
+      padding: 36px 48px 0;
+    }
+    figure { margin: 0; }
+    .phone {
+      background: #241c15;
+      border-radius: 36px;
+      padding: 12px;
+      box-shadow: 0 22px 40px rgba(42, 33, 24, 0.16);
+    }
+    .screen {
+      height: 520px;
+      border-radius: 26px;
+      overflow: hidden;
+      background: #f6f0e6;
+    }
+    .screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .pos-specs { object-position: center 70%; }
+    .pos-ticket { object-position: center 28%; }
+    .pos-checkout { object-position: center top; }
+    .pos-admin { object-position: 36% 0%; }
+    .pos-products { object-position: right top; }
+    figcaption { padding: 12px 2px 0; }
+    figcaption strong {
+      display: block;
+      font-size: 34px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+    figcaption span {
+      display: block;
+      margin-top: 2px;
+      font-size: 28px;
+      line-height: 1.3;
+      color: var(--muted);
+    }
+    .band {
+      margin: 34px 48px 0;
+    }
+    .band h2, .block h2 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      letter-spacing: 0.08em;
+      color: var(--c-dark);
+      font-weight: 700;
+    }
+    .band h2 em, .block h2 em {
+      font-style: normal;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0;
+      margin-left: 10px;
+    }
+    .desk {
+      border-radius: 28px;
+      overflow: hidden;
+      background: #efe4d4;
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 36px rgba(42, 33, 24, 0.1);
+      height: 460px;
+    }
+    .band p {
+      margin: 12px 4px 0;
+      font-size: 32px;
+      line-height: 1.35;
+    }
+    .band p span {
+      display: block;
+      margin-top: 2px;
+      font-size: 28px;
+      color: var(--muted);
+    }
+    .desk img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left top;
+      display: block;
+    }
+    .quad {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px 22px;
+      padding: 28px 48px 0;
+    }
+    .mini .screen { height: 360px; }
+    .quad figure:nth-child(-n + 2) .screen { height: 500px; }
+    .pos-top { object-position: center top; }
+    footer {
+      margin-top: 36px;
+      background: var(--ink);
+      color: #fffaf3;
+      padding: 36px 52px 40px;
+    }
+    footer .zh {
+      margin: 0;
+      font-family: "Noto Serif CJK SC", "Noto Serif", serif;
+      font-size: 48px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+    footer .en {
+      margin: 10px 0 0;
+      font-size: 32px;
+      line-height: 1.35;
+      color: #f0d7b0;
+    }
+    footer .fine {
+      margin: 18px 0 0;
+      font-size: 24px;
+      line-height: 1.45;
+      color: rgba(255, 250, 243, 0.72);
+    }
+  </style>
+</head>
+<body>
+  <article class="sheet">
+    <header>
+      <div class="kicker"><i></i>30 秒看懂 · See it in 30 seconds</div>
+      <h1>客人手机点单<br /><span>店里立刻接单</span></h1>
+      <p class="en-lead">Guests order on their phone. The shop takes the order right away.</p>
+      <p class="who"><b>餐厅 · 奶茶 · 烘焙</b>　Restaurant, milk tea, bakery</p>
+      <p class="who">中文 / English，顾客端和后台各自切换。　Each side has its own language switch.</p>
+      <p class="link"><b>演示 Demo</b> nanfeng-demo.pages.dev <em>/admin/</em></p>
+    </header>
+
+    <section class="story">
+      <figure>
+        <div class="phone"><div class="screen"><img class="pos-specs" src="shots/specs.png" alt="菜单规格：甜度、冰度、加料" /></div></div>
+        <figcaption>
+          <strong>甜度、冰度、加料</strong>
+          <span>Sweetness, ice, add-ons</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <div class="phone"><div class="screen"><img class="pos-ticket" src="shots/ticket.png" alt="模拟支付后的取餐号" /></div></div>
+        <figcaption>
+          <strong>取餐号、积分、等级</strong>
+          <span>Pickup number, points, level</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <div class="phone"><div class="screen"><img class="pos-checkout" src="shots/checkout.png" alt="自取、堂食、外送" /></div></div>
+        <figcaption>
+          <strong>自取 / 堂食 / 外送</strong>
+          <span>可备注，可约取餐时间</span>
+          <span>Pickup, table code, or delivery</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="band">
+      <h2>新订单会响 <em>A new order chimes</em></h2>
+      <div class="desk"><img src="shots/orders.png" alt="后台新订单，可以接单" /></div>
+      <p>接单，再标成可取餐。会员、发券、拼团和秒杀也在这里改。<span>Accept, then mark ready. Members, coupons, group buy, and the flash sale are set here too.</span></p>
+    </section>
+
+    <section class="quad">
+      <figure class="mini">
+        <div class="phone"><div class="screen"><img class="pos-top" src="shots/marketing.png" alt="秒杀、拼团和优惠券" /></div></div>
+        <figcaption>
+          <strong>秒杀、拼团、优惠券</strong>
+          <span>Flash sale, group buy, coupons</span>
+        </figcaption>
+      </figure>
+      <figure class="mini">
+        <div class="phone"><div class="screen"><img class="pos-top" src="shots/wallet.png" alt="储值余额和充值赠送" /></div></div>
+        <figcaption>
+          <strong>储值，充值有赠送</strong>
+          <span>Stored value, with a top-up bonus</span>
+        </figcaption>
+      </figure>
+      <figure class="mini">
+        <div class="phone"><div class="screen"><img class="pos-products" src="shots/products.png" alt="商品上下架和改价" /></div></div>
+        <figcaption>
+          <strong>上下架，改价格</strong>
+          <span>Menu on or off, edit the price</span>
+        </figcaption>
+      </figure>
+      <figure class="mini">
+        <div class="phone"><div class="screen"><img class="pos-admin" src="shots/dashboard.png" alt="今日订单和营业额" /></div></div>
+        <figcaption>
+          <strong>今日订单和营业额</strong>
+          <span>Today’s orders and sales</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <footer>
+      <p class="zh">换掉标志、颜色和菜单，就是你的店。</p>
+      <p class="en">Swap the logo, colors, and menu to launch for your shop.</p>
+      <p class="fine">画面来自上面的演示。店、菜单和支付都是虚构的，不会扣款。<br />Shots are from that demo. The shop, menu, and payment are fictional. Nothing is charged.</p>
+    </footer>
+  </article>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "pages": [
+    { "path": "pages/home/index", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/menu/index", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/cart/index", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/checkout/index", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/pay/index", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/order/index", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/orders/index", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/me/index", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/wallet/index", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/marketing/index", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/receipt/index", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/about/index", "style": { "navigationStyle": "custom" } }
+  ],
+  "globalStyle": {
+    "navigationStyle": "custom",
+    "backgroundColor": "#F6F0E6",
+    "backgroundColorTop": "#C4522A",
+    "backgroundColorBottom": "#F6F0E6"
+  }
+}

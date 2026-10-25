@@ -1,0 +1,26 @@
+{
+  "name": "南风茶食",
+  "appid": "",
+  "description": "Fictional ordering demo. Replace mp-weixin.appid (currently the tourist placeholder touristappid) with a real WeChat mini program AppID before you upload.",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "vueVersion": "3",
+  "mp-weixin": {
+    "appid": "touristappid",
+    "setting": {
+      "urlCheck": false,
+      "es6": true,
+      "minified": true,
+      "postcss": true
+    },
+    "usingComponents": true
+  },
+  "h5": {
+    "title": "南风茶食 Nanfeng Tea & Bites (demo)",
+    "router": {
+      "mode": "hash",
+      "base": "/"
+    }
+  }
+}

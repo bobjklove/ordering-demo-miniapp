@@ -1,0 +1,25 @@
+{
+  "name": "ordering-demo-miniapp",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc -p packages/core --noEmit && tsc -p packages/shop --noEmit",
+    "dev:h5": "npm run dev:h5 -w @demo/customer",
+    "dev:admin": "npm run dev -w @demo/admin -- --host 127.0.0.1 --port 5174",
+    "build:h5": "npm run build:h5 -w @demo/customer",
+    "build:mp-weixin": "npm run build:mp-weixin -w @demo/customer",
+    "build:admin": "npm run build -w @demo/admin",
+    "build": "npm run build:h5 && npm run build:admin && node scripts/combine-pages.mjs",
+    "demo": "npm run build && node scripts/serve-demo.mjs",
+    "serve": "node scripts/serve-demo.mjs"
+  },
+  "devDependencies": {
+    "typescript": "5.4.5",
+    "vitest": "2.1.9"
+  }
+}
