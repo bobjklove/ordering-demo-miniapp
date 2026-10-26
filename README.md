@@ -1,3 +1,5 @@
+![ordering-demo-miniapp](docs/ordering-demo-miniapp.png)
+
 # ordering-demo-miniapp
 
 Fictional shop: order → mock pay → admin inbox. 虚构店：下单→模拟支付→后台接单。
